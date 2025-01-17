@@ -14,8 +14,5 @@
 
     mkdir -p "$out"/.idx
     cp ${./dev.nix} "$out/.idx/dev.nix"
-    cp ${./icon.png} "$out/.idx/icon.png"
-
-    ( cd "$out" && npm i --package-lock-only --ignore-scripts )
   '';
 }

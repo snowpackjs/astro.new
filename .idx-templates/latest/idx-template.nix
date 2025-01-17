@@ -10,7 +10,7 @@
 
   bootstrap = ''
     mkdir "$out"
-    npm create astro@latest "$out" -- --template ${astroTemplate} --git --no-install --no-houston
+    npm create astro@latest "$out" -- --template ${astroTemplate} --git --no-install --no-houston --yes
 
     mkdir -p "$out"/.idx
     cp ${./dev.nix} "$out/.idx/dev.nix"

@@ -10,9 +10,11 @@
 
   bootstrap = ''
     mkdir "$out"
-    # npm create astro@latest "$out" -- --template ${astroTemplate} --git --no-install --no-houston --yes
+    yes | npm create astro@latest "$out" -- --template ${astroTemplate} --git --no-install --no-houston --yes
 
     mkdir -p "$out"/.idx
     cp ${./dev.nix} "$out/.idx/dev.nix"
+
+    ( cd "$out" && npm i --package-lock-only --ignore-scripts )
   '';
 }

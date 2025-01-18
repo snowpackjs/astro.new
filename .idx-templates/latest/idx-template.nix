@@ -18,7 +18,7 @@
     env
     which npm
     which node
-    echo y | timeout -k 15s 15s npm create astro@latest . --template ${astroTemplate} --git --no-install --skip-houston --yes || true
+    echo y | timeout -k 15s 15s npm create astro@latest . -- --template ${astroTemplate} --git --no-install --skip-houston --yes || true
 
     mkdir -p .idx
     cp ${./dev.nix} ".idx/dev.nix"

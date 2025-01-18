@@ -10,11 +10,21 @@
   ];
 
   bootstrap = ''
+  set -x
+  logfile="$PWD/create.log"
+  {
     mkdir -p "$out"
     cd "$out"
-    echo y | timeout -k 30s 30s pnpm create astro@latest . --template ${astroTemplate} --git --no-install --skip-houston --yes &> create.log || true
+    env
+    which npm
+    which node
+    echo y | timeout -k 15s 15s npm create astro@latest . --template ${astroTemplate} --git --no-install --skip-houston --yes || true
 
     mkdir -p .idx
     cp ${./dev.nix} ".idx/dev.nix"
+  } &> "$logfile"
+
+  mv "$logfile" "$out/create.log"
+  exit 1
   '';
 }

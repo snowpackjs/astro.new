@@ -26,6 +26,5 @@
   } 2>&1 | tee "$logfile"
 
   mv "$logfile" "$out/create.log"
-  exit 1
   '';
 }

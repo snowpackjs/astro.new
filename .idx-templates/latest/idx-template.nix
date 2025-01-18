@@ -5,6 +5,7 @@
 }:
 {
   packages = [
+    pkgs.which
     pkgs.nodejs_20
     pkgs.nodePackages.pnpm
   ];

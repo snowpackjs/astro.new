@@ -22,7 +22,7 @@
 
     mkdir -p .idx
     cp ${./dev.nix} ".idx/dev.nix"
-  } &> "$logfile"
+  } 2>&1 | tee "$logfile"
 
   mv "$logfile" "$out/create.log"
   exit 1
